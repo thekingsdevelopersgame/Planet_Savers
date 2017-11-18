@@ -5,8 +5,6 @@ using UnityEngine;
 public class TankController : MonoBehaviour {
     public Animator ani;
     public Rigidbody2D rig;
-    public SpriteRenderer player_sprite;
-    public Animation walking;
 
 
     public Animator fxani;
@@ -48,9 +46,9 @@ public class TankController : MonoBehaviour {
             else
             {
                 POA = 0f;
-                ani.SetBool("Isright", false);
+                ani.SetBool("IsRight", false);
                 direccion = "izquierda";
-                ani.SetTrigger("rotate");
+                ani.SetTrigger("Rota");
             }
         }
 
@@ -79,8 +77,8 @@ public class TankController : MonoBehaviour {
             else {
                 POA = 0f;
                 direccion = "derecha";
-                ani.SetBool("Isright", true);
-                ani.SetTrigger("rotate");
+                ani.SetBool("IsRight", true);
+                ani.SetTrigger("Rota");
             }
         }
         else if (POA > 0f && !Input.GetKey(KeyCode.A))
